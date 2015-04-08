@@ -1,7 +1,7 @@
 {
   "name": "node-snarl",
   "description": "Plugin for node to send notifications on Snarl4",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Tomás Hernández <tomas.hernandez03@gmail.com>",
   "license": "MIT",
   "main": "index.js",
