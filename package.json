@@ -2,11 +2,8 @@
   "name": "node-snarl",
   "description": "Plugin for node to send notifications on Snarl4",
   "version": "0.1.0",
-  "author": {
-    "name" : "Tomás Hernández",
-    "email" : "tomas.hernandez03@gmail.com"
-  },
-  "license": "Datactil",
+  "author": "Tomás Hernández <tomas.hernandez03@gmail.com>",
+  "license": "MIT",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -21,5 +18,13 @@
     "snarl",
     "snarl4",
     "notify"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/THernandez03/node-snarl/issues"
+  },
+  "homepage": "https://github.com/THernandez03/node-snarl",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }
