@@ -4,7 +4,7 @@ Plugin for node to send notifications on Snarl4
 ## Basic Usage
 ```javascript
 // Getting the plugin
-var Snarl = require('node-snarl');
+var Snarl = require('node-snarl')();
 
 // Function to register messages on an app name.
 Snarl.register(name);
@@ -12,7 +12,7 @@ Snarl.register(name);
 // If you want to check if the server is available
 if(Snarl.isAvailable()){
   // if its everything ok
-  
+
   // Send many notifications as you want.
   Snarl.notify(name, options);
   // Or send notifications with a default icon "done".
@@ -24,7 +24,26 @@ if(Snarl.isAvailable()){
 }
 ```
 ### Options
-Every options must be written as javascript object syntax.<br/><br/>
+These options must be used to set server params and set default message options
+``` javascript
+{
+  server: 'localhost'
+, port: '8080'
+, name: 'Snarl4'
+, iconPath: __dirname+'\\..\\icon'
+, messageOptions: {
+    timeout: 3
+  , title: 'Custom default Title'
+  , text: 'Custom default message'
+  }
+}
+```
+### Message Options
+These options can be used in these functions:
+- `Snarl.notify(mesageOptions)`
+- `Snarl.done(mesageOptions)`
+- `Snarl.fail(mesageOptions)`
+- `Snarl.log(mesageOptions)`
 If you want to see all message options, please visit this link https://sites.google.com/site/snarlapp/developers/api-reference#TOC-notify
 ``` javascript
 {
@@ -36,10 +55,22 @@ If you want to see all message options, please visit this link https://sites.goo
 ```
 <hr/>
 ## Advanced Usage
-If you have been registered a new Snarl app, you can ommit `name` parameter. Using the same example above.
+If you have been registered a new Snarl app, you can ommit `name` parameter.<br/><br/>
+Putting it all together.
 ```javascript
 // Getting the plugin
-var Snarl = require('node-snarl');
+var Snarl = require('node-snarl')({
+    server: 'localhost'
+  , port: '8080'
+  , name: 'Snarl4'
+  , iconPath: __dirname+'\\..\\icon'
+  , messageOptions: {
+      timeout: 3
+    , title: 'Custom default Title'
+    , text: 'Custom default message'
+    }
+  }
+});
 
 // Function to register messages on an app name.
 Snarl.register(name);
@@ -47,15 +78,38 @@ Snarl.register(name);
 // If you want to check if the server is available
 if(Snarl.isAvailable()){
   // if its everything ok
-  
+
   // Send many notifications as you want.
-  Snarl.notify(options);
+  Snarl.notify({
+    title: 'No icon'
+  , text: 'This is a notification with no icon'
+  , sound: 'path/to/sound'
+  , icon: 'path/to/image'
+  });
+
   // Or send notifications with a default icon "done".
-  Snarl.done(options);
+  Snarl.done({
+    title: 'Done icon'
+  , text: 'A done icon example'
+  , sound: 'path/to/sound'
+  , icon: 'path/to/image'
+  });
+
   // Or send notifications with a default icon "fail".
-  Snarl.fail(options);
+  Snarl.fail({
+    title: 'Snarl - Title Example'
+  , text: 'A done fail example'
+  , sound: 'path/to/sound'
+  , icon: 'path/to/image'
+  });
+
   // Or send notifications with a default icon "log".
-  Snarl.log(options);
+  Snarl.log({
+    title: 'Snarl - Title Example'
+  , text: 'A done log example'
+  , sound: 'path/to/sound'
+  , icon: 'path/to/image'
+  });
 }
 ```
 
