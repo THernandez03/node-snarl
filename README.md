@@ -51,9 +51,11 @@ These options can be used in these functions:
 - `Snarl.notify(mesageOptions)`
 - `Snarl.done(mesageOptions)`
 - `Snarl.fail(mesageOptions)`
-- `Snarl.log(mesageOptions)`<br/>
+- `Snarl.log(mesageOptions)`<br/><br/>
 If you want to see all message options, please visit this link https://sites.google.com/site/snarlapp/developers/api-reference#TOC-notify
-<hr/>
+
+---
+
 ## Advanced Usage
 If you have been registered a new Snarl app, you can ommit `name` parameter.<br/><br/>
 Putting it all together.
