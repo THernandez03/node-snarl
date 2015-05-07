@@ -39,12 +39,6 @@ These options must be used to set server params and set default message options
 }
 ```
 ### Message Options
-These options can be used in these functions:
-- `Snarl.notify(mesageOptions)`
-- `Snarl.done(mesageOptions)`
-- `Snarl.fail(mesageOptions)`
-- `Snarl.log(mesageOptions)`
-If you want to see all message options, please visit this link https://sites.google.com/site/snarlapp/developers/api-reference#TOC-notify
 ``` javascript
 {
   title: 'Snarl - Title Example'
@@ -53,6 +47,12 @@ If you want to see all message options, please visit this link https://sites.goo
 , icon: 'path/to/image'
 }
 ```
+These options can be used in these functions:
+- `Snarl.notify(mesageOptions)`
+- `Snarl.done(mesageOptions)`
+- `Snarl.fail(mesageOptions)`
+- `Snarl.log(mesageOptions)`<br/>
+If you want to see all message options, please visit this link https://sites.google.com/site/snarlapp/developers/api-reference#TOC-notify
 <hr/>
 ## Advanced Usage
 If you have been registered a new Snarl app, you can ommit `name` parameter.<br/><br/>
